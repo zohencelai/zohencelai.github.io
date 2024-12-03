@@ -8,7 +8,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <title>Carta</title>
+        <title>Zohencel AI</title>
         <meta name="description" content="">
 
         <!-- The compiled CSS file -->
@@ -28,7 +28,7 @@
     <!-- Header -->
     <header class="align--center pt3">
         <div class="container--lg border--bottom pb3">
-            <img class="logo mb3 reveal-on-scroll is-revealing" src="/img/zai_logo.png" alt="Carta">
+            <img class="logo mb3 reveal-on-scroll is-revealing" src="/img/head.png" alt="Zohencel AI">
             <h1 class="mb2">This is where the search ends!</h1>
             <span>
                 <a href="https://pypi.org/project/zohencel-ai/" class="link"><img class="download" src="/img/pypi_logo.png" alt="Download on the App Store"></a>
@@ -72,40 +72,152 @@
             </div>
         </div>
 
-        <!-- Focus -->
-        <!-- <div class="container--lg pt1 pb1">
-
-            <div class="grid-row grid-row--center">
-                <div class="grid-column mt3 mb2 order-2">
-                    <div class="border--bottom pb2 mb2">
-                        <h2>Usage data</h2>
-                        <p>Quis istud possit, inquit, negare? Videamus animi partes, quarum est conspectus illustrior; Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Non enim, si omnia non&nbsp;sequebatur.</p>
-                    </div>
-                    <p class="italic text--gray mb1">Quae quo sunt excelsiores, eo dant clariora indicia naturae. Causa autem fuit huc veniendi ut quosdam&nbsp;hinc.</p>
-                    <p class="bold">Carry Andersen, COO at&nbsp;Stripe</p>
-                </div>
-                <div class="grid-column span-1"></div>
-                <div class="grid-column mt3 mb2 order-1 reveal-on-scroll is-revealing">
-                    <img src="/img/data.svg" alt="Usage data">
-                </div>
+        <!-- Focus -->        
+<div class="container--lg pt1 pb1">
+    <div class="grid-row grid-row--center">
+        <div class="grid-column mt3 mb2 reveal-on-scroll is-revealing">
+            <img src="/img/new_vai.jpg" alt="Absolute security">
+        </div>
+        <div class="grid-column span-1"></div>
+        <div class="grid-column mt3 mb2">
+            <div class="border--bottom pb2 mb2">
+                <h2>AI VOICE ASSISTANT</h2>
+                <p>Experience Zohencel AI, a revolutionary, open-source AI voice assistant with inbuilt character roles and full customization. Tailor commands, personalities, and interactions effortlessly to suit your unique needs.With pre-designed characters and the ability to define custom roles, Zohencel AI adapts perfectly to both personal and professional requirements. Your voice assistant, your way!</p>
             </div>
+        </div>
+    </div>
+    <button id="toggle-btn-1" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
+        View Documentation
+    </button>
+    <div id="subtopic-container-1" style="display:none;"></div>
+    
+    <script>
+        const toggleBtn1 = document.getElementById('toggle-btn-1');
+        const container1 = document.getElementById('subtopic-container-1');
+        let isLoaded1 = false;
 
-            <div class="grid-row grid-row--center">
-                <div class="grid-column mt3 mb2 reveal-on-scroll is-revealing">
-                    <img src="/img/security.svg" alt="Absolute security">
-                </div>
-                <div class="grid-column span-1"></div>
-                <div class="grid-column mt3 mb2">
-                    <div class="border--bottom pb2 mb2">
-                        <h2>Absolute security</h2>
-                        <p>Itaque his sapiens semper vacabit. Qualis ista philosophia est, quae non interitum afferat pravitatis, sed sit contenta mediocritate vitiorum? Quid de Platone aut de Democrito loquar? Quis istud possit, inquit&nbsp;negare?</p>
-                    </div>
-                    <p class="italic text--gray mb1">Estne, quaeso, inquam, sitienti in bibendo voluptas? Duo Reges: constructio&nbsp;interrete.</p>
-                    <p class="bold">Josh Blenton, Product Manager at&nbsp;Blinkist</p>
-                </div>
+        toggleBtn1.addEventListener('click', async () => {
+            if (!isLoaded1) {
+                try {
+                    const response = await fetch('Voice_assistant.html');
+                    if (response.ok) {
+                        const content = await response.text();
+                        
+                        // Create a Shadow DOM root for style isolation
+                        const shadowRoot1 = container1.attachShadow({ mode: 'open' });
+                        
+                        // Add styles to the Shadow DOM
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            :host {
+                                display: block;
+                                width: 100%;
+                                padding: 10px;
+                                box-sizing: border-box;
+                                overflow: auto;
+                                background-color: #f9f9f9;
+                            }
+                        `;
+                        shadowRoot1.appendChild(style);
+
+                        // Add the HTML content
+                        const contentDiv = document.createElement('div');
+                        contentDiv.innerHTML = content;
+                        shadowRoot1.appendChild(contentDiv);
+
+                        isLoaded1 = true;
+                    } else {
+                        container1.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error loading subtopic:', error);
+                    container1.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+                }
+            }
+
+            // Toggle visibility of the container
+            container1.style.display = container1.style.display === 'none' ? 'block' : 'none';
+            toggleBtn1.textContent = container1.style.display === 'none' ? 'Show Subtopic' : 'Hide Subtopic';
+        });
+    </script>
+
+    <div class="grid-row grid-row--center">
+        <div class="grid-column mt3 mb2 order-2">
+            <div class="border--bottom pb2 mb2">
+                <h2>Chart Bot</h2>
+                <p>Chart Bot allows users to visualize data effortlessly through intuitive queries, generating insightful charts without coding expertise required.</p>
             </div>
+            <p class="bold">can you plot gender wise survival rate?</p>
+        </div>
+        <div class="grid-column span-1"></div>
+        <div class="grid-column mt3 mb2 order-1 reveal-on-scroll is-revealing">
+            <img src="/img/data.svg" alt="Usage data">
+        </div>
+    </div>
 
-        </div> -->
+    <button id="toggle-btn-2" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
+        View Documentation
+    </button>
+    <div id="subtopic-container-2" style="display:none;"></div>
+
+    <script>
+        const toggleBtn2 = document.getElementById('toggle-btn-2'); 
+        const container2 = document.getElementById('subtopic-container-2'); 
+        let isLoaded2 = false;
+
+        toggleBtn2.addEventListener('click', async () => {
+            // Load content only if it's not already loaded
+            if (!isLoaded2) {
+                try {
+                    const response = await fetch('Chart_bot.html');
+                    if (response.ok) {
+                        const content = await response.text();
+                        console.log('Content Loaded:', content);
+
+                        // Create a Shadow DOM root for style isolation
+                        const shadowRoot2 = container2.attachShadow({ mode: 'open' });
+
+                        // Add styles to the Shadow DOM
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            :host {
+                                display: block;
+                                width: 100%;
+                                padding: 10px;
+                                box-sizing: border-box;
+                                overflow: auto;
+                                background-color: #f9f9f9;
+                            }
+                        `;
+                        shadowRoot2.appendChild(style);
+
+                        // Add the HTML content
+                        const contentDiv = document.createElement('div');
+                        contentDiv.innerHTML = content;
+                        shadowRoot2.appendChild(contentDiv);
+
+                        isLoaded2 = true;
+                    } else {
+                        container2.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error loading subtopic:', error);
+                    container2.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+                }
+            }
+
+            // Toggle visibility of the container
+            if (container2.style.display === 'none') {
+                container2.style.display = 'block';
+                toggleBtn2.textContent = 'Hide Documentation';
+            } else {
+                container2.style.display = 'none';
+                toggleBtn2.textContent = 'View Documentation';
+            }
+        });
+    </script>
+</div>
+
 
         <!-- Mentioned -->
         <!-- <div class="container--lg pt3 pb3 mb2 align--center">
@@ -129,28 +241,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="pt1 pb3 align--center-on-mobile">
+    <footer class="pt1 pb3 align--center-on-mobile" style="background-color: #d7d7d7;">
         <div class="container">
             <div class="grid-row">
-                <!-- <div class="grid-column mt2 span-half">
-                    <div class="mb1">
-                        <span>
-                            <a href="https://www.apple.com/ios/app-store/" class="link"><img class="download" src="/img/ios.png" alt="Download on the App Store"></a>
-                        </span>
-                        <span>
-                            <a href="https://play.google.com/store" class="link"><img class="download" src="/img/googleplay.png" alt="Download on Google Play"></a>
-                        </span>
-                    </div>
-                    <p class="small">Design by <a href="https://www.papayatemplates.com" class="link link--text">Papaya</a>. Illustrations from&nbsp;<a href="https://undraw.co/" class="link link--text">Undraw</a>.</p>
-                </div> -->
-                <!-- <div class="grid-column mt2 span-half align--right align--center-on-mobile">
-                    <ul class="no-bullets list--inline">
-                        <li class="mr1"><a href="" class="link"><img class="icon" src="/img/youtube.svg" alt="YouTube"></a></li>
-                        <li class="mr1"><a href="" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
-                        <li><a href="" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
-                    </ul>
-                </div> -->
-                <div class="grid-column mt2 span-half align--right align--center-on-mobile">
+                <div class="grid-column mt2 span-full align--right align--center-on-mobile">
                     <ul class="no-bullets list--inline">
                         <li class="mr1">
                             <a href="https://www.linkedin.com/in/vishnu-k-8a058425b/" class="link" target="_blank">

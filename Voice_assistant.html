@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zohencel-AI Voice Assistant Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #93a4e6;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #93a4e6;
+            border-bottom: 2px solid #93a4e6;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: #333;
+        }
+        pre, code {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 0.9rem;
+            display: block;
+            white-space: pre-wrap;
+        }
+        a {
+            color: #93a4e6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Voice Assistant</h1>
+        <p>Transforming interactions with AI-driven voice technology</p>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The <strong>Zohencel Voice Assistant</strong> is an advanced AI tool designed to simplify interactions through voice. It empowers developers to create personalized, voice-enabled assistants with minimal effort, making it ideal for a wide range of applications, from personal assistants to business-oriented chatbots.</p>
+            <p>Unlike traditional voice assistants, Zohencel offers extensive customization, allowing developers to tailor the assistant's personality, tone, and voice type to fit specific use cases. With its easy-to-use interface, Zohencel reduces the complexity of implementing voice-enabled solutions, making AI accessible to everyone.</p>
+        </section>
+
+        <section>
+            <h2>Why Choose Zohencel Voice Assistant?</h2>
+            <p>Zohencel stands out because of its flexibility, scalability, and focus on customization. Here’s how it can be beneficial:</p>
+            <ul>
+                <li><strong>Customizable Personality:</strong> Developers can define the assistant's name, tone, and purpose to create a personalized experience.</li>
+                <li><strong>Simple Integration:</strong> With just a few lines of code, you can deploy a fully functional voice assistant.</li>
+                <li><strong>Adaptable Voice:</strong> Choose between male or female voices to suit user preferences.</li>
+                <li><strong>Enhanced Engagement:</strong> Personalizing responses using the user’s name makes interactions feel natural and relatable.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Key Specifications</h2>
+            <ul>
+                <li><strong>Customizable Voice Type:</strong> Supports male and female voices.</li>
+                <li><strong>Personalized Interactions:</strong> Enables setting both assistant and user names for tailored responses.</li>
+                <li><strong>Adaptive Tone:</strong> Allows you to define the assistant’s tone and purpose to match the context.</li>
+                <li><strong>Lightweight Implementation:</strong> Built for seamless integration with Python projects.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How Does It Differ from Traditional Voice Assistants?</h2>
+            <p>Traditional voice assistants often come with fixed functionality and limited customization options. Zohencel Voice Assistant, however, offers:</p>
+            <ul>
+                <li><strong>Complete Customization:</strong> Modify the assistant’s personality and tone to match your unique requirements.</li>
+                <li><strong>Developer-Friendly Design:</strong> Intuitive APIs that reduce development time and effort.</li>
+                <li><strong>Scalability:</strong> Suitable for personal use, enterprise-level applications, and beyond.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Usage Example</h2>
+            <p>Creating a Zohencel Voice Assistant is simple. Below is an example to help you get started:</p>
+            <pre><code>
+from zohencel_ai import VoiceAssistant
+
+# Initialize the VoiceAssistant
+assistant = VoiceAssistant()
+
+# Run the assistant with custom settings
+assistant.run(
+    voice='female',                # Voice type: 'female' or 'male'
+    assistant_name='Zohencel',     # Assistant's name
+    user_name='Alex',              # User's name for personalized responses
+    description='I am here as your friendly and reliable AI guide.'  # Assistant's tone and purpose
+)
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Parameters Explained</h2>
+            <h3>1. <code>voice</code></h3>
+            <p><strong>Options:</strong> <code>'female'</code> | <code>'male'</code></p>
+            <p><strong>Description:</strong> Selects the assistant’s voice type to match user preferences or application needs.</p>
+
+            <h3>2. <code>assistant_name</code></h3>
+            <p><strong>Type:</strong> <code>str</code></p>
+            <p><strong>Description:</strong> Gives the assistant a distinct identity for more relatable interactions.</p>
+
+            <h3>3. <code>user_name</code></h3>
+            <p><strong>Type:</strong> <code>str</code></p>
+            <p><strong>Description:</strong> Personalizes the conversation by addressing the user by name.</p>
+
+            <h3>4. <code>description</code></h3>
+            <p><strong>Type:</strong> <code>str</code></p>
+            <p><strong>Description:</strong> Sets the tone and duty of the assistant, defining its personality and role.</p>
+        </section>
+    </main>
+</body>
+</html>
