@@ -73,157 +73,157 @@
         </div>
 
         <!-- Focus -->        
-<div class="container--lg pt1 pb1">
-    <div class="grid-row grid-row--center">
-        <div class="grid-column mt3 mb2 reveal-on-scroll is-revealing">
-            <img src="/img/new_vai.jpg" alt="Absolute security">
-        </div>
-        <div class="grid-column span-1"></div>
-        <div class="grid-column mt3 mb2">
-            <div class="border--bottom pb2 mb2">
-                <h2>AI VOICE ASSISTANT</h2>
-                <p>Experience Zohencel AI, a revolutionary, open-source AI voice assistant with inbuilt character roles and full customization. Tailor commands, personalities, and interactions effortlessly to suit your unique needs.With pre-designed characters and the ability to define custom roles, Zohencel AI adapts perfectly to both personal and professional requirements. Your voice assistant, your way!</p>
+        <div class="container--lg pt1 pb1">
+            <div class="grid-row grid-row--center">
+                <div class="grid-column mt3 mb2 reveal-on-scroll is-revealing">
+                    <img src="/img/new_vai.jpg" alt="Absolute security">
+                </div>
+                <div class="grid-column span-1"></div>
+                <div class="grid-column mt3 mb2">
+                    <div class="border--bottom pb2 mb2">
+                        <h2>AI VOICE ASSISTANT</h2>
+                        <p>Experience Zohencel AI, a revolutionary, open-source AI voice assistant with inbuilt character roles and full customization. Tailor commands, personalities, and interactions effortlessly to suit your unique needs.With pre-designed characters and the ability to define custom roles, Zohencel AI adapts perfectly to both personal and professional requirements. Your voice assistant, your way!</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <button id="toggle-btn-1" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
-        View Documentation
-    </button>
-    <div id="subtopic-container-1" style="display:none;"></div>
-    
-    <script>
-        const toggleBtn1 = document.getElementById('toggle-btn-1');
-        const container1 = document.getElementById('subtopic-container-1');
-        let isLoaded1 = false;
+            <button id="toggle-btn-1" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
+                View Documentation
+            </button>
+            <div id="subtopic-container-1" style="display:none;"></div>
+            
+            <script>
+                const toggleBtn1 = document.getElementById('toggle-btn-1');
+                const container1 = document.getElementById('subtopic-container-1');
+                let isLoaded1 = false;
 
-        toggleBtn1.addEventListener('click', async () => {
-            if (!isLoaded1) {
-                try {
-                    const response = await fetch('Voice_assistant.html');
-                    if (response.ok) {
-                        const content = await response.text();
-                        
-                        // Create a Shadow DOM root for style isolation
-                        const shadowRoot1 = container1.attachShadow({ mode: 'open' });
-                        
-                        // Add styles to the Shadow DOM
-                        const style = document.createElement('style');
-                        style.textContent = `
-                            :host {
-                                display: block;
-                                width: 100%;
-                                padding: 10px;
-                                box-sizing: border-box;
-                                overflow: auto;
-                                background-color: #f9f9f9;
+                toggleBtn1.addEventListener('click', async () => {
+                    if (!isLoaded1) {
+                        try {
+                            const response = await fetch('Voice_assistant.html');
+                            if (response.ok) {
+                                const content = await response.text();
+                                
+                                // Create a Shadow DOM root for style isolation
+                                const shadowRoot1 = container1.attachShadow({ mode: 'open' });
+                                
+                                // Add styles to the Shadow DOM
+                                const style = document.createElement('style');
+                                style.textContent = `
+                                    :host {
+                                        display: block;
+                                        width: 100%;
+                                        padding: 10px;
+                                        box-sizing: border-box;
+                                        overflow: auto;
+                                        background-color: #f9f9f9;
+                                    }
+                                `;
+                                shadowRoot1.appendChild(style);
+
+                                // Add the HTML content
+                                const contentDiv = document.createElement('div');
+                                contentDiv.innerHTML = content;
+                                shadowRoot1.appendChild(contentDiv);
+
+                                isLoaded1 = true;
+                            } else {
+                                container1.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
                             }
-                        `;
-                        shadowRoot1.appendChild(style);
-
-                        // Add the HTML content
-                        const contentDiv = document.createElement('div');
-                        contentDiv.innerHTML = content;
-                        shadowRoot1.appendChild(contentDiv);
-
-                        isLoaded1 = true;
-                    } else {
-                        container1.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
+                        } catch (error) {
+                            console.error('Error loading subtopic:', error);
+                            container1.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+                        }
                     }
-                } catch (error) {
-                    console.error('Error loading subtopic:', error);
-                    container1.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-                }
-            }
 
-            // Toggle visibility of the container
-            container1.style.display = container1.style.display === 'none' ? 'block' : 'none';
-            toggleBtn1.textContent = container1.style.display === 'none' ? 'View Documentation' : 'Hide Subtopic';
-        });
-    </script>
+                    // Toggle visibility of the container
+                    container1.style.display = container1.style.display === 'none' ? 'block' : 'none';
+                    toggleBtn1.textContent = container1.style.display === 'none' ? 'View Documentation' : 'Hide Subtopic';
+                });
+            </script>
 
-    <div class="grid-row grid-row--center">
-        <div class="grid-column mt3 mb2 order-2">
-            <div class="border--bottom pb2 mb2">
-                <h2>Chart Bot</h2>
-                <p>Chart Bot allows users to visualize data effortlessly through intuitive queries, generating insightful charts without coding expertise required.</p>
+            <div class="grid-row grid-row--center">
+                <div class="grid-column mt3 mb2 order-2">
+                    <div class="border--bottom pb2 mb2">
+                        <h2>Chart Bot</h2>
+                        <p>Chart Bot allows users to visualize data effortlessly through intuitive queries, generating insightful charts without coding expertise required.</p>
+                    </div>
+                    <p class="bold">can you plot gender wise survival rate?</p>
+                </div>
+                <div class="grid-column span-1"></div>
+                <div class="grid-column mt3 mb2 order-1 reveal-on-scroll is-revealing">
+                    <img src="/img/data.svg" alt="Usage data">
+                </div>
             </div>
-            <p class="bold">can you plot gender wise survival rate?</p>
-        </div>
-        <div class="grid-column span-1"></div>
-        <div class="grid-column mt3 mb2 order-1 reveal-on-scroll is-revealing">
-            <img src="/img/data.svg" alt="Usage data">
-        </div>
-    </div>
 
-    <button id="toggle-btn-2" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
-        View Documentation
-    </button>
-    <div id="subtopic-container-2" style="display:none;"></div>
+            <button id="toggle-btn-2" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
+                View Documentation
+            </button>
+            <div id="subtopic-container-2" style="display:none;"></div>
 
-    <script>
-        const toggleBtn2 = document.getElementById('toggle-btn-2'); 
-        const container2 = document.getElementById('subtopic-container-2'); 
-        let isLoaded2 = false;
+            <script>
+                const toggleBtn2 = document.getElementById('toggle-btn-2'); 
+                const container2 = document.getElementById('subtopic-container-2'); 
+                let isLoaded2 = false;
 
-        toggleBtn2.addEventListener('click', async () => {
-            // Load content only if it's not already loaded
-            if (!isLoaded2) {
-                try {
-                    const response = await fetch('Chart_bot.html');
-                    if (response.ok) {
-                        const content = await response.text();
-                        console.log('Content Loaded:', content);
+                toggleBtn2.addEventListener('click', async () => {
+                    // Load content only if it's not already loaded
+                    if (!isLoaded2) {
+                        try {
+                            const response = await fetch('Chart_bot.html');
+                            if (response.ok) {
+                                const content = await response.text();
+                                console.log('Content Loaded:', content);
 
-                        // Create a Shadow DOM root for style isolation
-                        const shadowRoot2 = container2.attachShadow({ mode: 'open' });
+                                // Create a Shadow DOM root for style isolation
+                                const shadowRoot2 = container2.attachShadow({ mode: 'open' });
 
-                        // Add styles to the Shadow DOM
-                        const style = document.createElement('style');
-                        style.textContent = `
-                            :host {
-                                display: block;
-                                width: 100%;
-                                padding: 10px;
-                                box-sizing: border-box;
-                                overflow: auto;
-                                background-color: #f9f9f9;
+                                // Add styles to the Shadow DOM
+                                const style = document.createElement('style');
+                                style.textContent = `
+                                    :host {
+                                        display: block;
+                                        width: 100%;
+                                        padding: 10px;
+                                        box-sizing: border-box;
+                                        overflow: auto;
+                                        background-color: #f9f9f9;
+                                    }
+                                `;
+                                shadowRoot2.appendChild(style);
+
+                                // Add the HTML content
+                                const contentDiv = document.createElement('div');
+                                contentDiv.innerHTML = content;
+                                shadowRoot2.appendChild(contentDiv);
+
+                                isLoaded2 = true;
+                            } else {
+                                container2.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
                             }
-                        `;
-                        shadowRoot2.appendChild(style);
-
-                        // Add the HTML content
-                        const contentDiv = document.createElement('div');
-                        contentDiv.innerHTML = content;
-                        shadowRoot2.appendChild(contentDiv);
-
-                        isLoaded2 = true;
-                    } else {
-                        container2.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
+                        } catch (error) {
+                            console.error('Error loading subtopic:', error);
+                            container2.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+                        }
                     }
-                } catch (error) {
-                    console.error('Error loading subtopic:', error);
-                    container2.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-                }
-            }
 
-            // Toggle visibility of the container
-            if (container2.style.display === 'none') {
-                container2.style.display = 'block';
-                toggleBtn2.textContent = 'Hide Documentation';
-            } else {
-                container2.style.display = 'none';
-                toggleBtn2.textContent = 'View Documentation';
-            }
-        });
-    </script>
-</div>
+                    // Toggle visibility of the container
+                    if (container2.style.display === 'none') {
+                        container2.style.display = 'block';
+                        toggleBtn2.textContent = 'Hide Documentation';
+                    } else {
+                        container2.style.display = 'none';
+                        toggleBtn2.textContent = 'View Documentation';
+                    }
+                });
+            </script>
+        </div>
 
 
         <!-- Mentioned -->
         <!-- <div class="container--lg pt3 pb3 mb2 align--center">
             <p class="mb2">Mentioned in</p>
             <span><img class="mentioned" src="/img/mentioned.svg" alt="New York Times, TC, Product Hunt, Recode"></span>
-        </div> -->
+        </div>  -->
 
         <!-- CTA -->
         <!-- <div class="bg--dark-gray align--center pt3 pb3">
@@ -239,6 +239,104 @@
         </div> -->
 
     </main>
+
+    <div id="custom-stats-section" style="background-color: #eeefef; padding: 50px;">
+        <section class="stats">
+            <div class="container">
+                <ul class="no-bullets list--inline align--center">
+                    <li class="stat-item">
+                        <div class="text-center stat-box">
+                            <h1 class="purple" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: purple;">
+                                <span class="counter">5000</span>+
+                            </h1>
+                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Downloads</h3>
+                        </div>
+                    </li>
+                    <li class="stat-item">
+                        <div class="text-center stat-box">
+                            <h1 class="blue counter" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: rgb(204, 0, 129);">3</h1>
+                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Features</h3>
+                        </div>
+                    </li>
+                    <li class="stat-item">
+                        <div class="text-center stat-box">
+                            <h1 class="pink" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: rgb(137, 0, 206);">
+                                <span class="counter">200</span>+
+                            </h1>
+                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Feedbacks</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <style>
+            /* Remove bullets and apply horizontal alignment */
+            .no-bullets {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center; /* Center align the items */
+                gap: 20px; /* Add spacing between items */
+            }
+
+            /* Individual list item styling */
+            .list--inline > .stat-item {
+                display: inline-block; /* Inline behavior */
+                text-align: center; /* Align content in the center */
+                min-width: 200px; /* Optional: adjust the size of each stat block */
+            }
+
+            /* Center alignment for mobile */
+            @media (max-width: 768px) {
+                .list--inline {
+                    flex-direction: column; /* Stack items vertically */
+                    gap: 15px; /* Reduce space for smaller screens */
+                }
+            }
+
+        </style>
+
+        <!-- Isolated Scripts -->
+        <script src="js/jquery-2.1.1.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/swiper.jquery.min.js"></script>
+        
+        <script>
+            (function() {
+                // Swiper initialization for isolated section
+                var swiper1 = new Swiper('#custom-stats-section .client-swiper', {
+                    slidesPerView: 3,
+                    paginationClickable: true,
+                    nextButton: '#custom-stats-section .swiper-button-next',
+                    prevButton: '#custom-stats-section .swiper-button-prev',
+                    spaceBetween: 60,
+                    breakpoints: {
+                        320: { slidesPerView: 1, spaceBetween: 10 },
+                        480: { slidesPerView: 1, spaceBetween: 20 },
+                        640: { slidesPerView: 1, spaceBetween: 30 }
+                    }
+                });
+
+                var swiper2 = new Swiper('#custom-stats-section .testimonial-swiper', {
+                    slidesPerView: 3,
+                    paginationClickable: true,
+                    spaceBetween: 30,
+                    grabCursor: true,
+                    freeMode: true,
+                    breakpoints: {
+                        320: { slidesPerView: 1, spaceBetween: 10 },
+                        480: { slidesPerView: 1, spaceBetween: 10 },
+                        640: { slidesPerView: 1, spaceBetween: 10 }
+                    }
+                });
+
+                // Counter initialization for isolated section
+                $('#custom-stats-section .counter').counterUp({ time: 1000 });
+            })();
+        </script>
+    </div>
 
     <!-- Footer -->
     <footer class="pt1 pb3 align--center-on-mobile" style="background-color: #d7d7d7;">
