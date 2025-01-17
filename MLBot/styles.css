@@ -1,0 +1,486 @@
+html, body { 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .header {
+    text-align: center;
+    background-color: #106EBE;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+} */
+
+.header {
+    text-align: center;
+    background-color: #106EBE;
+    padding: 3px; /* Remove extra padding to align image height exactly */
+    height: 60px; /* Set a fixed height for the header */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between; /* Space elements evenly: logo in center, icon on right */
+    align-items: center; /* Vertically align items */
+    position: relative;
+}
+
+
+.header img {
+    height: 100%; /* Make the image height equal to the header height */
+    width: auto; /* Maintain the aspect ratio of the image */
+    object-fit: contain; /* Ensure the image scales properly within the header */
+    margin: 0 auto; /* Center the logo */
+}
+
+.home-icon {
+    display: flex; /* Ensure the icon aligns properly */
+    align-items: center; /* Vertically align the icon */
+    justify-content: center;
+    text-decoration: none; /* Remove underline */
+    padding-right: 30px; /* Add some padding for spacing */
+}
+
+.home-icon svg {
+    width: 30px; /* Set the size of the icon */
+    height: 30px;
+    fill: #FFFFFF; /* Make the icon white */
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.home-icon:hover svg {
+    transform: scale(1.1); /* Slight zoom on hover */
+    fill: #FFD700; /* Change color on hover */
+}
+
+
+/* Popup overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Hidden by default */
+    backdrop-filter: blur(5px); /* Blur effect for background */
+}
+
+/* Popup container styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    display: none; /* Hidden by default */
+}
+
+/* Popup image styles */
+.popup-header-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Button styles for the popup */
+.popup button {
+    background-color: #106EBE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+}
+
+.popup button:hover {
+    background-color: #0b59a3;
+}
+
+
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #ddd;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.upload-section input {
+    margin-top: 10px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    background-color: #e0e0e0;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.option:hover {
+    transform: scale(1.05); 
+    background-color: #9d9f9e;
+}
+
+.option:active {
+    transform: scale(1.03);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;  /* Ensure the main content takes full height */
+    overflow: hidden;  /* Prevent scrolling on the main content */
+}
+.hidden {
+    display: none;
+}
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .chat-messages {
+    flex: 1;
+    overflow-y: auto; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+} */
+
+.chat-message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message.assistant {
+    justify-content: flex-start;
+}
+
+.chat-message span {
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.chat-message.user span {
+    background-color: #e5d6e5;
+}
+
+.chat-message.assistant span {
+    background-color: #d4d6ef;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #106EBE;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #106EBE;
+}
+
+.models-heading {
+    font-size: 1.9em;
+    font-weight: bold;
+    text-align: center;
+    color: #683b3b;
+    margin-bottom: 20px;
+    max-width: 30%;
+}
+
+.models-dropdown {
+    flex-grow: 1; /* Allows the dropdown to take up remaining space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+#modelsContent {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;  /* Set a max height for the content section */
+    overflow-y: auto;  /* Make it scrollable vertically */
+}
+
+/* Styling for dropdown hover and focus */
+.models-dropdown:hover,
+.models-dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.models-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.models-dropdown {
+    padding: 5px;
+    max-width: 350px;
+}
+
+.download-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.download-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.models-label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Fixing the width of the content and making it scrollable */
+.model-overview {
+    max-width: 800px; /* Set the fixed width */
+    width: 100%;
+    overflow-y: auto;
+    white-space: pre-wrap !important; /* Ensure wrapping occurs */
+    word-wrap: break-word !important; /* Allow text to break on long words */
+    line-height: 1.6; /* Adjust line height for better readability */
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-top: 10px;
+    word-break: break-word; /* Ensure word breaking */
+}
+
+
+/* Styles for Model Scripts (Python code) */
+.model-scripts {
+    max-width: 800px; /* Set the fixed width */
+    width: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: pre-wrap; /* Wrap long text inside */
+    word-wrap: break-word; /* Allow text to break on long words */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    line-height: 1.4; /* Adjust line height for code readability */
+    padding: 10px;
+    background-color: #ffffff;
+    color: #5c5757; /* Light color for better contrast */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.script-btn {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.script-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+#scriptContent {
+    white-space: pre-wrap; /* Wrap the text */
+    word-wrap: break-word; /* Allow word wrapping */
+    line-height: 1.5;
+}
+
+#scriptHeading {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styles for Model Evaluation */
+/* Container for the file upload section */
+.file-upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Label for the file input */
+.file-upload-section label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Hidden file input */
+.file-upload-section input[type="file"] {
+    display: none;
+}
+/* Create a container for buttons and align them in a row */
+.file-upload-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between the buttons */
+    margin-bottom: 10px;
+}
+
+/* Style for the custom file upload button */
+.file-upload-section .file-upload-button {
+    background-color: #50d955; /* Green color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    transition: background-color 0.3s ease;
+}
+
+/* Button height and width can be adjusted using these classes */
+.file-upload-section .file-upload-button.small {
+    height: 40px;
+    min-width: 100px;
+    padding: 0 10px;
+}
+
+.file-upload-section .file-upload-button.medium {
+    height: 50px;
+    min-width: 120px;
+    padding: 0 20px;
+}
+
+.file-upload-section .file-upload-button.large {
+    height: 60px;
+    min-width: 150px;
+    padding: 0 30px;
+}
+
+/* Hover effect for the upload button */
+.file-upload-section .file-upload-button:hover {
+    background-color: #2c8e31;
+}
+
+/* Custom file input label (styled like a button) */
+.file-upload-section .file-upload-label {
+    background-color: #119dcc; /* Blue color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 47px; /* Vertically center text */
+    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+}
+
+/* Label height and width can be adjusted using these classes */
+.file-upload-section .file-upload-label.small {
+    height: 40px;
+    min-width: 100px;
+    padding: 0 10px;
+}
+
+.file-upload-section .file-upload-label.medium {
+    height: 50px;
+    min-width: 120px;
+    padding: 0 20px;
+}
+
+.file-upload-section .file-upload-label.large {
+    height: 60px;
+    min-width: 150px;
+    padding: 0 30px;
+}
+
+/* Hover effect for the file input label */
+.file-upload-section .file-upload-label:hover {
+    background-color: #146e87;
+}
+
+/* Styling for displaying the file name below the buttons */
+.file-upload-section .file-name {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* FOR HELP SESSION */
+
+#helpContent {
+    margin: 20px; /* Adds margin around the entire help content */
+}
+
+.scrollable-content {
+    max-height: 470px; /* Set maximum height */
+    overflow-y: auto;  /* Adds vertical scroll when content overflows */
+    padding: 10px;     /* Adds padding inside the scrollable area */
+    border: 1px solid #ccc; /* Optional: Adds a border around the content */
+    border-radius: 5px; /* Optional: Rounds the corners */
+    background-color: #f9f9f9; /* Optional: Adds a light background color */
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Realtime Chat UI</title>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/bt-blu.jpg" alt="Chatbot Logo">
+        <a href="https://zohencelai.github.io/" class="home-icon" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#FFFFFF">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+    </div> 
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <img src="assets/bt-grn.jpg" alt="Popup Header" class="popup-header-img">
+        <h2>Welcome to Zohencel ML Bot</h2>
+        <p><i>(Community Edition)</i></p>
+        <p id="api-status-message"></p> <!-- Placeholder for API status message -->
+        <button onclick="checkAPI()">Check API</button> <!-- New button -->
+        <button onclick="closePopup()">Go</button>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="file-upload-section">
+                <label for="fileUpload">Upload File</label>
+                <div class="file-upload-buttons">
+                    <label for="fileUpload" class="file-upload-label medium">Choose File</label>
+                    <button class="file-upload-button medium" onclick="uploadFile()">Upload</button>
+                </div>
+                <div id="fileName" class="file-name">No file selected</div>
+                <input type="file" id="fileUpload" name="fileUpload" onchange="updateFileName()">
+            </div>
+            <div class="options">
+                <div class="option" id="mlBotOption">ML Bot</div>
+                <div class="option" id="modelsOption">Models</div>
+                <div class="option" id="helpOption">Help</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="mlBotContent" class="content">
+                <div class="chat">
+                    <div id="chatMessages" class="chat-messages" 
+                    style="height: 470px; overflow-y: auto; border: 4px solid #ccc; padding: 10px; border-radius: 4px; background-color: #f9f9f9;"></div>
+               
+               <div class="chat-input" 
+                    style="position: absolute; bottom: 0; width: 71%; background-color: #fff; padding: 10px; box-sizing: border-box; border-top: 1px solid #ccc; display: flex; align-items: center;">
+                   <input type="text" id="userInput" placeholder="Type your message" 
+                          style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px; box-sizing: border-box;">
+                   <button id="sendButton" 
+                           style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">Send</button>
+               </div>
+                                 
+                </div>
+                <script>
+                    document.getElementById('userInput').addEventListener('keypress', function (e) {
+                        if (e.key === 'Enter') {
+                            document.getElementById('sendButton').click();
+                        }
+                    });
+                </script>
+            </div>
+            <!-- <div class="main-content" style="position: relative; height: auto; display: flex; flex-direction: column;">                
+                <div id="mlBotContent" class="content" style="flex: 1; display: flex; flex-direction: column;">
+                    <div class="chat" style="flex: 1; display: flex; flex-direction: column;">
+                        <div id="chatMessages" class="chat-messages" 
+                            style="flex: 1; overflow-y: auto; border: 4px solid #ccc; padding: 10px; border-radius: 4px; background-color: #f9f9f9;"></div>
+                    
+                        <div class="chat-input" 
+                            style="width: 100%; background-color: #fff; padding: 10px; box-sizing: border-box; border-top: 1px solid #ccc; display: flex; align-items: center;">
+                            <input type="text" id="userInput" placeholder="Type your message" 
+                                style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px; box-sizing: border-box;">
+                            <button id="sendButton" 
+                                style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Trigger click on the send button when pressing Enter
+                    document.getElementById('userInput').addEventListener('keypress', function (e) {
+                        if (e.key === 'Enter') {
+                            document.getElementById('sendButton').click();
+                        }
+                    });
+                </script>
+            </div> -->
+            <div id="modelsContent" class="content hidden">
+                <h3 class="models-heading">Models Section</h3>
+                <div class="models-row">
+                    <label for="modelSelect" class="models-label">Select a Model:</label>
+                    <select id="modelSelect" class="models-dropdown">
+                        <option value="" disabled selected>Loading models...</option>
+                    </select>
+                    <button id="downloadButton" class="download-btn" disabled>Download</button>
+                </div>
+                <!-- Buttons for Script Selection -->
+                <div class="models-row">
+                    <button id="overviewButton" class="script-btn active">Overview</button>
+                    <button id="trainButton" class="script-btn">Training Script</button>
+                    <button id="testButton" class="script-btn">Testing Script</button>
+                </div>
+            
+                <!-- Model Content -->
+                <div id="modelOverview" class="model-overview">
+                    <!-- <h4>Analysis Overview</h4> -->
+                    <pre id="analysisOverviewContent"></pre>
+                </div>
+                <div class="model-scripts">
+                    <h4 id="scriptHeading" class="script-heading"></h4>
+                    <pre id="scriptContent" class="script-content"></pre>
+                </div>
+            </div>                      
+            <div id="helpContent" class="content hidden">
+                <!-- <h3>Help Section</h3> -->
+                <div id="markdownContainer" class="scrollable-content"></div>
+            </div>      
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+</body>
+</html> 

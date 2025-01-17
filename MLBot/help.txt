@@ -1,0 +1,65 @@
+# Zohencel AI - ML Bot (Community Edition)
+
+**World's First 'Text to ML Model' Chat Application**
+
+## Introduction
+Zohencel AI ML Bot is a revolutionary tool designed to make building machine learning models as simple as having a conversation. With the ML Bot, even beginners can easily create, train, and deploy machine learning models. The bot not only guides you through the process but also automates all necessary steps to ensure a seamless experience.
+
+No worries! ML Bot will interact with you to understand exactly what model you want to build, even if you're a complete beginner. That's not all. Every next step is a surprise!! The bot performs all the necessary statistical analysis, creates a machine learning pipeline, and executes it seamlessly. If this is not revolutionary, then what is? I wish you will wonder, if these features are available in the community edition, what awaits you in the prime edition!
+
+### Steps - Install Zohencel AI
+Install the latest version of Zohencel AI using pip:
+```bash
+pip install zohencel-ai
+```
+Run the code in a new python file
+
+```python
+from zohencel_ai import VoiceAssistant
+assistant = VoiceAssistant()
+assistant.run(
+    voice='female',                # Voice type: 'female' or 'male'
+    assistant_name='Zohencel',     # Assistant's name
+    user_name='Alex',              # User's name for personalized responses
+    description='I am here as your friendly and reliable AI guide.'  # Assistant's tone and purpose
+)
+```
+
+## Features
+1. **Interactive Model Creation**:
+   - ML Bot interacts with you to understand your requirements.
+   - Provides guidance even if you're new to machine learning.
+2. **Automated Statistical Analysis**:
+   - Performs statistical and descriptive analysis of your data.
+   - Suggests the best practices for model training.
+3. **ML Training Pipeline**:
+   - Automatically creates and executes a machine learning pipeline.
+   - Handles all necessary data transformations for model training.
+4. **Model and Script Generation**:
+   - Saves the trained model as a `.pkl` file.
+   - Generates training and testing scripts, along with descriptive analysis.
+   - Provides accuracy metrics and an overview of the trained model.
+5. **Downloadable Files**:
+   - Models and associated files can be downloaded anytime from the Models tab.
+   - Statistical analysis and script content are easily accessible and copiable.
+6. **Portability**:
+   - The generated training data and scripts can be used in other environments.
+   - The pickle file is ready for API development with the included test script.
+
+## Limitations
+- **Community Edition**:
+  - Supports only regression and classification problems.
+  - Works exclusively with scikit-learn algorithms.
+  - Operates as a local API accessed via the [ML Bot Portal](https://zohencelai.github.io/mlbot).
+  - Limited by data size and training time.
+
+- **Prime Edition**:
+  - Offers advanced features, including custom training logic and access to a wider range of algorithms.
+  - Provides enhanced integration capabilities and overcomes limitations of the community edition.
+
+## Conclusion
+Zohencel AI ML Bot redefines the way machine learning models are created. The community edition already offers an impressive suite of features, making it an invaluable tool for beginners and professionals alike. Imagine the possibilities with the Prime Edition!
+
+---
+
+**Note**: For any issues or inquiries, visit the official portal at [zohencelai.github.io/mlbot](https://zohencelai.github.io/mlbot).
