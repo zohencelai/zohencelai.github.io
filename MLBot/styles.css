@@ -477,7 +477,7 @@ html, body {
 }
 
 .scrollable-content {
-    max-height: 470px; /* Set maximum height */
+    max-height: calc(100vh - 140px); /* Set maximum height */
     overflow-y: auto;  /* Adds vertical scroll when content overflows */
     padding: 10px;     /* Adds padding inside the scrollable area */
     border: 1px solid #ccc; /* Optional: Adds a border around the content */
