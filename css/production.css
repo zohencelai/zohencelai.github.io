@@ -42,14 +42,17 @@ code {
 }
 
 .mlbot-cover {
-    max-width: 600px; /* Adjust this value to resize the image */
+    max-width: 100%; /* Ensure the image does not exceed its container's width */
+    width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 5px auto; /* Adjust the top and bottom margin */
 }
 
-/* If you want to adjust only the top or bottom margin */
-.mlbot-cover {
-    margin-top: 0px; /* Space above the image */
-    margin-bottom: 20px; /* Space below the image */
+/* Optional: Adjust margins for smaller screens */
+@media (max-width: 600px) {
+    .mlbot-cover {
+        margin-top: 0px; /* Space above the image */
+        margin-bottom: 10px; /* Reduce space below the image for smaller screens */
+    }
 }
