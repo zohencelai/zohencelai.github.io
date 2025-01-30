@@ -7,20 +7,21 @@ Zohencel AI ML Bot is a revolutionary tool designed to make building machine lea
 
 No worries! ML Bot will interact with you to understand exactly what model you want to build, even if you're a complete beginner. That's not all. Every next step is a surprise!! The bot performs all the necessary statistical analysis, creates a machine learning pipeline, and executes it seamlessly. If this is not revolutionary, then what is? I wish you will wonder, if these features are available in the community edition, what awaits you in the prime edition!
 
-### Step 1: Install Zohencel AI
+### Steps - Install Zohencel AI
 Install the latest version of Zohencel AI using pip:
 ```bash
-pip install zohencel-ai
+   pip install zohencel-ai
 ```
 Run the code in a new python file
 
 ```python
 
-from zohencel_ai.mlbot.bot import ZohencelmlBot
-bot = ZohencelmlBot()
-bot.run()
+   from zohencel_ai.mlbot.bot import ZohencelmlBot
+   bot = ZohencelmlBot()
+   bot.run() 
 
 ```
+
 ## Features
 1. **Interactive Model Creation**:
    - ML Bot interacts with you to understand your requirements.
@@ -46,7 +47,7 @@ bot.run()
 - **Community Edition**:
   - Supports only regression and classification problems.
   - Works exclusively with scikit-learn algorithms.
-  - Operates as a local API accessed via the ML Bot Portal.
+  - Operates as a local API accessed via the [ML Bot Portal](https://zohencelai.github.io/mlbot).
   - Limited by data size and training time.
 
 - **Prime Edition**:
@@ -58,4 +59,4 @@ Zohencel AI ML Bot redefines the way machine learning models are created. The co
 
 ---
 
-**Note**: For any issues or inquiries, visit the official portal at [zohencelai.github.io](https://zohencelai.github.io).
+**Note**: For any issues or inquiries, visit the official portal at [zohencelai.github.io/mlbot](https://zohencelai.github.io/mlbot).
