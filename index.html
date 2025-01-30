@@ -31,16 +31,38 @@
             <img class="logo mb3 reveal-on-scroll is-revealing" src="/img/head.png" alt="Zohencel AI">
             <h1 class="mb2">This is where the search ends!</h1>
             <span>
-                <a href="https://pypi.org/project/zohencel-ai/" class="link"><img class="download" src="/img/pypi_logo.png" alt="Download on the App Store"></a>
+                <a href="https://pypi.org/project/zohencel-ai/" class="link">
+                    <img class="download" src="/img/pypi_logo.png" alt="Download on the App Store">
+                </a>
             </span>
             <span>
-                <a href="https://github.com/Vishnuk4906/zohencel-ai-utils" class="link"><img class="download" src="/img/github.png" alt="Download on Google Play"></a>
+                <a href="https://github.com/Vishnuk4906/zohencel-ai-utils" class="link">
+                    <img class="download" src="/img/github.png" alt="Download on Google Play">
+                </a>
             </span>
+            <!-- New row for PyPI badges -->
+            <div class="pypi-badges mt3">
+                <a href="https://pypi.org/project/zohencel-ai/">
+                    <img src="https://img.shields.io/pypi/v/zohencel-ai" alt="PyPI version">
+                </a>
+                <a href="https://pepy.tech/project/zohencel-ai">
+                    <img src="https://static.pepy.tech/badge/zohencel-ai" alt="Total Downloads">
+                </a>
+                <a href="https://pepy.tech/project/zohencel-ai">
+                    <img src="https://img.shields.io/pypi/dm/zohencel-ai?cacheSeconds=3600" alt="Downloads">
+                </a>
+                <a href="https://pypi.org/project/zohencel-ai/">
+                    <img src="https://img.shields.io/pypi/pyversions/zohencel-ai" alt="Python Versions">
+                </a>
+                <a href="https://pypi.org/project/zohencel-ai/">
+                    <img src="https://img.shields.io/pypi/l/zohencel-ai" alt="License">
+                </a>
+            </div>
         </div>
     </header>
-
+    
+    
     <main>
-
         <!-- Feature list -->
         <div class="container pt3 mt2 text--gray align--center">
             <p class="mb3">Your Voice, Your Data, Your Assistant</p>
@@ -72,6 +94,124 @@
             </div>
         </div>
 
+        <div class="container pt3 mt2 text--gray align--center">
+            <div class="grid-row">
+                <div class="grid-column span-full mb3 reveal-on-scroll is-revealing">
+                    <img class="mlbot-cover mb1" src="/img/mlbot_cover.jpg" alt="Zohencel AI ML Bot">
+                    <h2 class="mb1">Zohencel-AI   ML Bot (Community Edition)</h2>
+                    <p class="mb2">World's First 'Text to ML Model' Chat Application</p>
+                    <p class="mb2">Build machine learning models as easily as having a conversation. No coding required!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container pt3 mt2 text--gray align--center">
+            <div class="grid-row">
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <h3 class="mb1">Interactive Model Creation</h3>
+                    <p>ML Bot interacts with you to understand your requirements, even if you're new to machine learning.</p>
+                </div>
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <h3 class="mb1">Automated Statistical Analysis</h3>
+                    <p>Performs statistical and descriptive analysis, suggesting best practices for model training.</p>
+                </div>
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <h3 class="mb1">ML Training Pipeline</h3>
+                    <p>Automatically creates and executes a machine learning pipeline, handling all data transformations.</p>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <h3 class="mb1">Model and Script Generation</h3>
+                    <p>Saves the trained model as a `.pkl` file and generates training scripts with accuracy metrics.</p>
+                </div>
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <h3 class="mb1">Downloadable Files</h3>
+                    <p>Download models and associated files anytime from the Models tab.</p>
+                </div>
+                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
+                    <h3 class="mb1">Portability</h3>
+                    <p>Use generated training data and scripts in other environments, ready for API development.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container pt3 mt2 text--gray align--center">
+            <div class="grid-row">
+                <div class="grid-column span-full mb3 reveal-on-scroll is-revealing">
+                    <h2 class="mb1">Get Started with Zohencel-AI ML Bot</h2>
+                    <p class="mb2">Install the latest version of Zohencel AI using pip:</p>
+                    <pre class="mb2 text--right"><code>pip install zohencel-ai</code></pre>
+                    <p class="mb2">Run the code in a new Python file:</p>
+                    <pre class="mb2 text--right"><code>from zohencel_ai.mlbot.bot import ZohencelmlBot
+        bot = ZohencelmlBot()
+        bot.run()</code></pre>
+        <div class="button-row">
+            <a href="https://zohencelai.github.io/MLBot" class="button button--primary">Try ML Bot Now</a>
+            <button id="learn-more-btn" class="button button--primary" style="cursor: pointer;">
+                Learn More
+            </button>
+        </div>
+        <div id="documentation-container" style="display: none;"></div>
+        
+        <script>
+            const learnMoreBtn = document.getElementById('learn-more-btn');
+            const documentationContainer = document.getElementById('documentation-container');
+            let isDocumentationLoaded = false;
+        
+            learnMoreBtn.addEventListener('click', async () => {
+                if (!isDocumentationLoaded) {
+                    try {
+                        // Fetch the mlbot_v0.html file
+                        const response = await fetch('mlbot_v0.html');
+                        if (response.ok) {
+                            const content = await response.text();
+        
+                            // Create a Shadow DOM root for style isolation
+                            const shadowRoot = documentationContainer.attachShadow({ mode: 'open' });
+        
+                            // Add styles to the Shadow DOM
+                            const style = document.createElement('style');
+                            style.textContent = `
+                                :host {
+                                    display: block;
+                                    width: 100%;
+                                    padding: 20px;
+                                    box-sizing: border-box;
+                                    overflow: auto;
+                                    background-color: #f9f9f9;
+                                    border: 1px solid #ddd;
+                                    border-radius: 8px;
+                                    margin-top: 20px;
+                                }
+                            `;
+                            shadowRoot.appendChild(style);
+        
+                            // Add the HTML content
+                            const contentDiv = document.createElement('div');
+                            contentDiv.innerHTML = content;
+                            shadowRoot.appendChild(contentDiv);
+        
+                            isDocumentationLoaded = true;
+                        } else {
+                            documentationContainer.innerHTML = `<p style="color:red;">Failed to load documentation. HTTP Status: ${response.status}</p>`;
+                        }
+                    } catch (error) {
+                        console.error('Error loading documentation:', error);
+                        documentationContainer.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+                    }
+                }
+        
+                // Toggle visibility of the documentation container
+                documentationContainer.style.display = documentationContainer.style.display === 'none' ? 'block' : 'none';
+                learnMoreBtn.textContent = documentationContainer.style.display === 'none' ? 'Learn More' : 'Hide Documentation';
+            });
+        </script>
+                </div>
+            </div>
+        </div>
+    
+    
         <!-- Focus -->        
         <div class="container--lg pt1 pb1">
             <div class="grid-row grid-row--center">
@@ -247,7 +387,7 @@
                     <li class="stat-item">
                         <div class="text-center stat-box">
                             <h1 class="purple" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: purple;">
-                                <span class="counter">5000</span>+
+                                <span class="counter">11000</span> +
                             </h1>
                             <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Downloads</h3>
                         </div>
@@ -261,7 +401,7 @@
                     <li class="stat-item">
                         <div class="text-center stat-box">
                             <h1 class="pink" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: rgb(137, 0, 206);">
-                                <span class="counter">200</span>+
+                                <span class="counter">3500</span> +
                             </h1>
                             <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Feedbacks</h3>
                         </div>
