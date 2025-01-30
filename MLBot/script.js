@@ -437,6 +437,29 @@ async function uploadFile() {
     }
 }
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     fetch('help.txt')
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error(`Failed to load markdown file: ${response.statusText}`);
+//             }
+//             return response.text();
+//         })
+//         .then(markdown => {
+//             const converter = new showdown.Converter({
+//                 tables: true,               // Enable table support
+//                 simplifiedAutoLink: true,   // Automatically link URLs
+//                 tasklists: true,            // Enable GitHub-style task lists
+//                 strikethrough: true,        // Support strikethrough text
+//                 emoji: true                 // Enable emoji support
+//             });
+//             const html = converter.makeHtml(markdown);
+//             document.getElementById('markdownContainer').innerHTML = html;
+//         })
+//         .catch(error => {
+//             console.error('Error loading markdown content:', error);
+//         });
+// });
 document.addEventListener('DOMContentLoaded', () => {
     fetch('help.txt')
         .then(response => {
@@ -447,17 +470,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(markdown => {
             const converter = new showdown.Converter({
-                tables: true,               // Enable table support
-                simplifiedAutoLink: true,   // Automatically link URLs
-                tasklists: true,            // Enable GitHub-style task lists
-                strikethrough: true,        // Support strikethrough text
-                emoji: true                 // Enable emoji support
+                tables: true,
+                simplifiedAutoLink: true,
+                tasklists: true,
+                strikethrough: true,
+                emoji: true
             });
             const html = converter.makeHtml(markdown);
             document.getElementById('markdownContainer').innerHTML = html;
         })
         .catch(error => {
             console.error('Error loading markdown content:', error);
+            document.getElementById('markdownContainer').innerHTML = `<p style="color: red;">Error loading help content: ${error.message}</p>`;
         });
 });
 
