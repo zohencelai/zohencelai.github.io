@@ -46,7 +46,7 @@ bot.run()
 - **Community Edition**:
   - Supports only regression and classification problems.
   - Works exclusively with scikit-learn algorithms.
-  - Operates as a local API accessed via the [ML Bot Portal](https://zohencelai.github.io/mlbot).
+  - Operates as a local API accessed via the ML Bot Portal.
   - Limited by data size and training time.
 
 - **Prime Edition**:
