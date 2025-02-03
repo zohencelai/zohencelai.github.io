@@ -109,7 +109,7 @@ html, body {
 /*000000000000000000000000000000000000000000000000000
 
 /* Popup overlay styles */
-.overlay {
+/* .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -117,9 +117,9 @@ html, body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    display: none; /* Hidden by default */
-    backdrop-filter: blur(5px); /* Blur effect for background */
-}
+    display: none; 
+    backdrop-filter: blur(5px); 
+} */
 
 /* Popup container styles */
 .popup {
@@ -681,4 +681,103 @@ html, body {
     line-height: 20px;
     font-size: 14px;
     font-weight: bold;
+}
+
+--------------------------------------------
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Hidden by default */
+    backdrop-filter: blur(5px); /* Blur effect */
+}
+
+/* E-card styles */
+.e-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
+    width: 500px;
+    height: 330px;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+/* Wave animation styles */
+.wave {
+    position: absolute;
+    width: 630px;
+    height: 700px;
+    opacity: 0.6;
+    background: linear-gradient(144deg, #af40ff, #5b42f3 20%, #00ddeb);
+    border-radius: 40%;
+    animation: wave 12s infinite linear;
+}
+
+.wave:nth-child(2) {
+    animation-duration: 15s;
+    opacity: 0.4;
+}
+
+.wave:nth-child(3) {
+    animation-duration: 20s;
+    opacity: 0.2;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Content styles */
+.infotop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1001;
+}
+
+.infotop h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.infotop p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.infotop button {
+    background-color: #106EBE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+}
+
+.infotop button:hover {
+    background-color: #0b59a3;
 }
