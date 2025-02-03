@@ -40,16 +40,34 @@
             </svg>
         </a>
     </div>
-    <div class="overlay" id="overlay"></div>
+    <!-- <div class="overlay" id="overlay"></div>
     <div class="popup" id="popup">
         <img src="assets/bt-grn.jpg" alt="Popup Header" class="popup-header-img">
         <h2>Welcome to Zohencel ML Bot</h2>
         <p><i>(Community Edition)</i></p>
-        <p id="api-status-message"></p> <!-- Placeholder for API status message -->
-        <button onclick="checkAPI()">Check API</button> <!-- New button -->
+        <p id="api-status-message"></p> 
+        <button onclick="checkAPI()">Check API</button> 
         <button onclick="closePopup()">Go</button>
+    </div> -->
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Popup Card -->
+    <div class="e-card playing" id="popup">
+        <!-- Waves for background animation -->
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+
+        <!-- Content -->
+        <div class="infotop">
+            <h2>Zohencel-AI ML Bot</h2>
+            <p><i>(Community Edition)</i></p>
+            <p id="api-status-message"></p> <!-- API status message -->
+            <button onclick="checkAPI()">Check API</button>
+            <button onclick="closePopup()">Go</button>
+        </div>
     </div>
-    
     <div class="container">
         <div class="sidebar">
             <div class="file-upload-section">
@@ -133,4 +151,4 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
 </body>
-</html> 
+</html>  
