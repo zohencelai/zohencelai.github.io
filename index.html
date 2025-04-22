@@ -1,516 +1,227 @@
 <!doctype html>
 <html lang="en-us">
 
-    <head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Meta -->
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Zohencel AI - Advanced AI Solutions</title>
+    <meta name="description" content="Zohencel AI offers advanced, customizable AI tools including Voice Assistant, ML Bot, and Chart Bot.">
 
-        <title>Zohencel AI</title>
-        <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Serif+Pro:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-        <!-- The compiled CSS file -->
-        <link rel="stylesheet" href="css/production.css">
+    <link rel="stylesheet" href="styles.css"> <link rel="shortcut icon" href="favicon.ico">
+</head>
 
-        <!-- Web fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700" rel="stylesheet"> 
+<body>
 
-        <!-- favicon.ico. Place these in the root directory. -->
-        <link rel="shortcut icon" href="favicon.ico">
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <!-- <img src="img/head.png" alt="Zohencel AI Logo" class="nav-logo-img"> -->
+                <span>Zohencel AI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#mlbot">ML Bot</a></li>
+                <li><a href="#voice-assistant">Voice Assistant</a></li>
+                <li><a href="#chartbot">Chart Bot</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+             <button class="hamburger" id="hamburger-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-    </head>
-
-    <body class="has-animations">
-
-
-    <!-- Header -->
-    <header class="align--center pt3">
-        <div class="container--lg border--bottom pb3">
-            <img class="logo mb3 reveal-on-scroll is-revealing" src="/img/head.png" alt="Zohencel AI">
-            <h1 class="mb2">This is where the search ends!</h1>
-            <span>
-                <a href="https://pypi.org/project/zohencel-ai/" class="link">
-                    <img class="download" src="/img/pypi_logo.png" alt="Download on the App Store">
+    <header id="hero" class="hero-section">
+        <div class="container text-center">
+            <img class="logo reveal-on-scroll" src="img/head.png" alt="Zohencel AI"> 
+            <h1 class="reveal-on-scroll">This is where the search ends!</h1>
+            <p class="subtitle reveal-on-scroll">Your Voice, Your Data, Your Assistant</p>
+            <div class="header-links reveal-on-scroll">
+                <a href="https://pypi.org/project/zohencel-ai/" class="link link-pypi" target="_blank" rel="noopener noreferrer">
+                     <!-- {/* SVG for PyPI */} -->
+                     <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.213 5.34a.1.1 0 0 0-.1-.1H9.887a.1.1 0 0 0-.1.1l-.88 4.84h1.78l.88-4.84zm-4.426 0h4.426l.88 4.84h1.78L16.1 5.24a.1.1 0 0 0-.1-.1h-2.207a.1.1 0 0 0-.1.1l-.88 4.84h-1.78l.88-4.84zm8.213 13.32a.1.1 0 0 0 .1.1h4.426a.1.1 0 0 0 .1-.1l.88-4.84h-1.78l-.88 4.84zm4.426 0h-4.426l-.88 4.84H7.9a.1.1 0 0 0-.1.1l.88 4.84h4.426a.1.1 0 0 0 .1-.1l.88-4.84h1.78l-.88 4.84zm-1.78-4.84.88-4.84h-1.78l-.88 4.84h1.78zm0 0h1.78l-.88-4.84h1.78l.88 4.84h1.78l-.88-4.84a.1.1 0 0 0-.1-.1h-4.426a.1.1 0 0 0-.1.1l-.88 4.84h1.78l.88-4.84zm-6.213-1.72h-1.78l.88-4.84h1.78l-.88 4.84zm-1.78 0h-1.78l.88-4.84h-1.78l-.88 4.84a.1.1 0 0 0 .1.1h4.426a.1.1 0 0 0 .1-.1l.88-4.84h-1.78l-.88 4.84zm-1.78-4.84h1.78l.88-4.84h-1.78l-.88 4.84zm0 0h-1.78l-.88-4.84h1.78l.88 4.84zM9.887 5.24l-.88 4.84H7.227l.88-4.84h1.78zm0 0H5.447a.1.1 0 0 0-.1.1l-.88 4.84h1.78l.88-4.84h1.78l.88 4.84h1.78l-.88-4.84a.1.1 0 0 0-.1-.1H9.887z"/></svg>
+                     <span>View on PyPI</span>
                 </a>
-            </span>
-            <span>
-                <a href="https://github.com/Vishnuk4906/zohencel-ai-utils" class="link">
-                    <img class="download" src="/img/github.png" alt="Download on Google Play">
+                <a href="https://github.com/Vishnuk4906/zohencel-ai-utils" class="link link-github" target="_blank" rel="noopener noreferrer">
+                    <!-- {/* SVG for GitHub */} -->
+                    <svg class="link-icon" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/> </svg>
+                    <span>View on GitHub</span>
                 </a>
-            </span>
-            <!-- New row for PyPI badges -->
-            <div class="pypi-badges mt3">
-                <a href="https://pypi.org/project/zohencel-ai/">
-                    <img src="https://img.shields.io/pypi/v/zohencel-ai" alt="PyPI version">
-                </a>
-                <a href="https://pepy.tech/project/zohencel-ai">
-                    <img src="https://static.pepy.tech/badge/zohencel-ai" alt="Total Downloads">
-                </a>
-                <a href="https://pepy.tech/project/zohencel-ai">
-                    <img src="https://img.shields.io/pypi/dm/zohencel-ai?cacheSeconds=3600" alt="Downloads">
-                </a>
-                <a href="https://pypi.org/project/zohencel-ai/">
-                    <img src="https://img.shields.io/pypi/pyversions/zohencel-ai" alt="Python Versions">
-                </a>
-                <a href="https://pypi.org/project/zohencel-ai/">
-                    <img src="https://img.shields.io/pypi/l/zohencel-ai" alt="License">
-                </a>
+            </div>
+            <div class="pypi-badges reveal-on-scroll">
+                 <!-- {/* Badge links remain the same */} -->
+                <a href="https://pypi.org/project/zohencel-ai/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/v/zohencel-ai?style=flat-square" alt="PyPI version"></a>
+                <a href="https://pepy.tech/project/zohencel-ai" target="_blank" rel="noopener noreferrer"><img src="https://static.pepy.tech/badge/zohencel-ai?style=flat-square" alt="Total Downloads"></a>
+                <a href="https://pepy.tech/project/zohencel-ai" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/dm/zohencel-ai?style=flat-square&cacheSeconds=3600" alt="Downloads"></a>
+                <a href="https://pypi.org/project/zohencel-ai/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/pyversions/zohencel-ai?style=flat-square" alt="Python Versions"></a>
+                <a href="https://pypi.org/project/zohencel-ai/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/l/zohencel-ai?style=flat-square" alt="License"></a>
             </div>
         </div>
     </header>
-    
-    
     <main>
-        <!-- Feature list -->
-        <div class="container pt3 mt2 text--gray align--center">
-            <p class="mb3">Your Voice, Your Data, Your Assistant</p>
-            <div class="grid-row">
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <img class="illustration--small mb1" src="/img/va.png" alt="Speak Your Way: A Voice Assistant as Unique as You">
-                    <p>Speak Your Way: A Voice Assistant as Unique as You</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <img class="illustration--small mb1" src="/img/cb.png" alt="Query. Visualize. Discover. No Coding Needed">
-                    <p>Query. Visualize. Discover. No Coding Needed</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <img class="illustration--small mb1" src="/img/mlb.png" alt="Simplify Machine Learning: No Code, Just Queries.">
-                    <p>Simplify Machine Learning: No Code, Just Queries.</p>
-                </div>
-                <!-- <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <img class="illustration--small mb1" src="/img/vault.svg" alt="Put in a vault">
-                    <p>Put in a vault</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <img class="illustration--small mb1" src="/img/messaging.svg" alt="Fast messaging">
-                    <p>Fast messaging</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <img class="illustration--small mb1" src="/img/mail.svg" alt="Share with others">
-                    <p>Share with others</p>
-                </div> -->
-            </div>
-        </div>
 
-        <div class="container pt3 mt2 text--gray align--center">
-            <div class="grid-row">
-                <div class="grid-column span-full mb3 reveal-on-scroll is-revealing">
-                    <img class="mlbot-cover mb1" src="/img/mlbot_cover.jpg" alt="Zohencel AI ML Bot">
-                    <h2 class="mb1">Zohencel-AI   ML Bot (Community Edition)</h2>
-                    <p class="mb2">World's First 'Text to ML Model' Chat Application</p>
-                    <p class="mb2">Build machine learning models as easily as having a conversation. No coding required!</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container pt3 mt2 text--gray align--center">
-            <div class="grid-row">
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <h3 class="mb1">Interactive Model Creation</h3>
-                    <p>ML Bot interacts with you to understand your requirements, even if you're new to machine learning.</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <h3 class="mb1">Automated Statistical Analysis</h3>
-                    <p>Performs statistical and descriptive analysis, suggesting best practices for model training.</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <h3 class="mb1">ML Training Pipeline</h3>
-                    <p>Automatically creates and executes a machine learning pipeline, handling all data transformations.</p>
-                </div>
-            </div>
-            <div class="grid-row">
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <h3 class="mb1">Model and Script Generation</h3>
-                    <p>Saves the trained model as a `.pkl` file and generates training scripts with accuracy metrics.</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <h3 class="mb1">Downloadable Files</h3>
-                    <p>Download models and associated files anytime from the Models tab.</p>
-                </div>
-                <div class="grid-column span-one-third mb3 reveal-on-scroll is-revealing">
-                    <h3 class="mb1">Portability</h3>
-                    <p>Use generated training data and scripts in other environments, ready for API development.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container pt3 mt2 text--gray align--center">
-            <div class="grid-row">
-                <div class="grid-column span-full mb3 reveal-on-scroll is-revealing">
-                    <h2 class="mb1">Get Started with Zohencel-AI ML Bot</h2>
-                    <p class="mb2">Install the latest version of Zohencel AI using pip:</p>
-                    <pre class="mb2 text--right"><code>pip install zohencel-ai</code></pre>
-                    <p class="mb2">Run the code in a new Python file:</p>
-                    <pre class="mb2 text--right"><code>from zohencel_ai.mlbot.bot import ZohencelmlBot
-        bot = ZohencelmlBot()
-        bot.run()</code></pre>
-        <div class="button-row">
-            <a href="https://zohencelai.github.io/MLBot" class="button button--primary">Try ML Bot Now</a>
-            <button id="learn-more-btn" class="button button--primary" style="cursor: pointer;">
-                Learn More
-            </button>
-        </div>
-        <div id="documentation-container" style="display: none;"></div>
-        
-        <script>
-            const learnMoreBtn = document.getElementById('learn-more-btn');
-            const documentationContainer = document.getElementById('documentation-container');
-            let isDocumentationLoaded = false;
-        
-            learnMoreBtn.addEventListener('click', async () => {
-                if (!isDocumentationLoaded) {
-                    try {
-                        // Fetch the mlbot_v0.html file
-                        const response = await fetch('mlbot_v0.html');
-                        if (response.ok) {
-                            const content = await response.text();
-        
-                            // Create a Shadow DOM root for style isolation
-                            const shadowRoot = documentationContainer.attachShadow({ mode: 'open' });
-        
-                            // Add styles to the Shadow DOM
-                            const style = document.createElement('style');
-                            style.textContent = `
-                                :host {
-                                    display: block;
-                                    width: 100%;
-                                    padding: 20px;
-                                    box-sizing: border-box;
-                                    overflow: auto;
-                                    background-color: #f9f9f9;
-                                    border: 1px solid #ddd;
-                                    border-radius: 8px;
-                                    margin-top: 20px;
-                                }
-                            `;
-                            shadowRoot.appendChild(style);
-        
-                            // Add the HTML content
-                            const contentDiv = document.createElement('div');
-                            contentDiv.innerHTML = content;
-                            shadowRoot.appendChild(contentDiv);
-        
-                            isDocumentationLoaded = true;
-                        } else {
-                            documentationContainer.innerHTML = `<p style="color:red;">Failed to load documentation. HTTP Status: ${response.status}</p>`;
-                        }
-                    } catch (error) {
-                        console.error('Error loading documentation:', error);
-                        documentationContainer.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-                    }
-                }
-        
-                // Toggle visibility of the documentation container
-                documentationContainer.style.display = documentationContainer.style.display === 'none' ? 'block' : 'none';
-                learnMoreBtn.textContent = documentationContainer.style.display === 'none' ? 'Learn More' : 'Hide Documentation';
-            });
-        </script>
-                </div>
-            </div>
-        </div>
-    
-    
-        <!-- Focus -->        
-        <div class="container--lg pt1 pb1">
-            <div class="grid-row grid-row--center">
-                <div class="grid-column mt3 mb2 reveal-on-scroll is-revealing">
-                    <img src="/img/new_vai.jpg" alt="Absolute security">
-                </div>
-                <div class="grid-column span-1"></div>
-                <div class="grid-column mt3 mb2">
-                    <div class="border--bottom pb2 mb2">
-                        <h2>AI VOICE ASSISTANT</h2>
-                        <p>Experience Zohencel AI, a revolutionary, open-source AI voice assistant with inbuilt character roles and full customization. Tailor commands, personalities, and interactions effortlessly to suit your unique needs.With pre-designed characters and the ability to define custom roles, Zohencel AI adapts perfectly to both personal and professional requirements. Your voice assistant, your way!</p>
-                    </div>
-                </div>
-            </div>
-            <button id="toggle-btn-1" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
-                View Documentation
-            </button>
-            <div id="subtopic-container-1" style="display:none;"></div>
-            
-            <script>
-                const toggleBtn1 = document.getElementById('toggle-btn-1');
-                const container1 = document.getElementById('subtopic-container-1');
-                let isLoaded1 = false;
-
-                toggleBtn1.addEventListener('click', async () => {
-                    if (!isLoaded1) {
-                        try {
-                            const response = await fetch('Voice_assistant.html');
-                            if (response.ok) {
-                                const content = await response.text();
-                                
-                                // Create a Shadow DOM root for style isolation
-                                const shadowRoot1 = container1.attachShadow({ mode: 'open' });
-                                
-                                // Add styles to the Shadow DOM
-                                const style = document.createElement('style');
-                                style.textContent = `
-                                    :host {
-                                        display: block;
-                                        width: 100%;
-                                        padding: 10px;
-                                        box-sizing: border-box;
-                                        overflow: auto;
-                                        background-color: #f9f9f9;
-                                    }
-                                `;
-                                shadowRoot1.appendChild(style);
-
-                                // Add the HTML content
-                                const contentDiv = document.createElement('div');
-                                contentDiv.innerHTML = content;
-                                shadowRoot1.appendChild(contentDiv);
-
-                                isLoaded1 = true;
-                            } else {
-                                container1.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
-                            }
-                        } catch (error) {
-                            console.error('Error loading subtopic:', error);
-                            container1.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-                        }
-                    }
-
-                    // Toggle visibility of the container
-                    container1.style.display = container1.style.display === 'none' ? 'block' : 'none';
-                    toggleBtn1.textContent = container1.style.display === 'none' ? 'View Documentation' : 'Hide Subtopic';
-                });
-            </script>
-
-            <div class="grid-row grid-row--center">
-                <div class="grid-column mt3 mb2 order-2">
-                    <div class="border--bottom pb2 mb2">
-                        <h2>Chart Bot</h2>
-                        <p>Chart Bot allows users to visualize data effortlessly through intuitive queries, generating insightful charts without coding expertise required.</p>
-                    </div>
-                    <p class="bold">can you plot gender wise survival rate?</p>
-                </div>
-                <div class="grid-column span-1"></div>
-                <div class="grid-column mt3 mb2 order-1 reveal-on-scroll is-revealing">
-                    <img src="/img/data.svg" alt="Usage data">
-                </div>
-            </div>
-
-            <button id="toggle-btn-2" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.2s;">
-                View Documentation
-            </button>
-            <div id="subtopic-container-2" style="display:none;"></div>
-
-            <script>
-                const toggleBtn2 = document.getElementById('toggle-btn-2'); 
-                const container2 = document.getElementById('subtopic-container-2'); 
-                let isLoaded2 = false;
-
-                toggleBtn2.addEventListener('click', async () => {
-                    // Load content only if it's not already loaded
-                    if (!isLoaded2) {
-                        try {
-                            const response = await fetch('Chart_bot.html');
-                            if (response.ok) {
-                                const content = await response.text();
-                                console.log('Content Loaded:', content);
-
-                                // Create a Shadow DOM root for style isolation
-                                const shadowRoot2 = container2.attachShadow({ mode: 'open' });
-
-                                // Add styles to the Shadow DOM
-                                const style = document.createElement('style');
-                                style.textContent = `
-                                    :host {
-                                        display: block;
-                                        width: 100%;
-                                        padding: 10px;
-                                        box-sizing: border-box;
-                                        overflow: auto;
-                                        background-color: #f9f9f9;
-                                    }
-                                `;
-                                shadowRoot2.appendChild(style);
-
-                                // Add the HTML content
-                                const contentDiv = document.createElement('div');
-                                contentDiv.innerHTML = content;
-                                shadowRoot2.appendChild(contentDiv);
-
-                                isLoaded2 = true;
-                            } else {
-                                container2.innerHTML = `<p style="color:red;">Failed to load subtopic content. HTTP Status: ${response.status}</p>`;
-                            }
-                        } catch (error) {
-                            console.error('Error loading subtopic:', error);
-                            container2.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-                        }
-                    }
-
-                    // Toggle visibility of the container
-                    if (container2.style.display === 'none') {
-                        container2.style.display = 'block';
-                        toggleBtn2.textContent = 'Hide Documentation';
-                    } else {
-                        container2.style.display = 'none';
-                        toggleBtn2.textContent = 'View Documentation';
-                    }
-                });
-            </script>
-        </div>
-
-
-        <!-- Mentioned -->
-        <!-- <div class="container--lg pt3 pb3 mb2 align--center">
-            <p class="mb2">Mentioned in</p>
-            <span><img class="mentioned" src="/img/mentioned.svg" alt="New York Times, TC, Product Hunt, Recode"></span>
-        </div>  -->
-
-        <!-- CTA -->
-        <!-- <div class="bg--dark-gray align--center pt3 pb3">
-            <div class="container pt2 pb2">
-                <img class="cta-image mb2 reveal-on-scroll is-revealing" src="/img/text.svg" alt="Text the app">
-                <p class="h3 text--white mb1 bold">We'll text you the&nbsp;app</p>
-                <p class="text--white mb3">Just insert your number below. Messaging rates&nbsp;apply.</p>
-                <div class="inline-block mr1 no-mr-on-mobile" style="width:280px;max-width:100%">
-                    <input class="form-control" type="tel" placeholder="Phone number">
-                </div>
-                <button class="btn btn--secondary">Send</button>
-            </div>
-        </div> -->
-
-    </main>
-
-    <div id="custom-stats-section" style="background-color: #eeefef; padding: 50px;">
-        <section class="stats">
+        <section id="features" class="features-section">
             <div class="container">
-                <ul class="no-bullets list--inline align--center">
-                    <li class="stat-item">
-                        <div class="text-center stat-box">
-                            <h1 class="purple" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: purple;">
-                                <span class="counter">15000</span> +
-                            </h1>
-                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Downloads</h3>
+                <h2 class="section-title text-center reveal-on-scroll">Core Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item reveal-on-scroll">
+                        <img class="feature-icon" src="img/va.png" alt="Voice Assistant Icon">
+                        <h3>AI Voice Assistant</h3>
+                        <p>Speak Your Way: A Voice Assistant as Unique as You.</p>
+                    </div>
+                    <div class="feature-item reveal-on-scroll">
+                        <img class="feature-icon" src="img/cb.png" alt="Chart Bot Icon">
+                         <h3>Chart Bot</h3>
+                        <p>Query. Visualize. Discover. No Coding Needed.</p>
+                    </div>
+                    <div class="feature-item reveal-on-scroll">
+                        <img class="feature-icon" src="img/mlb.png" alt="ML Bot Icon">
+                         <h3>ML Bot</h3>
+                        <p>Simplify Machine Learning: No Code, Just Queries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mlbot" class="mlbot-section">
+            <div class="container">
+                 <div class="mlbot-header text-center reveal-on-scroll">
+                     <img class="mlbot-cover mb1" src="img/mlbot_cover.jpg" alt="Zohencel AI ML Bot Cover">
+                     <h2 class="section-title">Zohencel-AI ML Bot (Community Edition)</h2>
+                     <p class="section-subtitle">World's First 'Text to ML Model' Chat Application</p>
+                     <p>Build machine learning models as easily as having a conversation. No coding required!</p>
+                </div>
+
+                <div class="mlbot-features-grid">
+                     <div class="mlbot-feature-item reveal-on-scroll">
+                        <h3>Interactive Model Creation</h3>
+                        <p>ML Bot interacts with you to understand your requirements, even if you're new to machine learning.</p>
+                    </div>
+                    <div class="mlbot-feature-item reveal-on-scroll">
+                        <h3>Automated Statistical Analysis</h3>
+                        <p>Performs statistical and descriptive analysis, suggesting best practices for model training.</p>
+                    </div>
+                    <div class="mlbot-feature-item reveal-on-scroll">
+                        <h3>ML Training Pipeline</h3>
+                        <p>Automatically creates and executes a machine learning pipeline, handling all data transformations.</p>
+                    </div>
+                    <div class="mlbot-feature-item reveal-on-scroll">
+                        <h3>Model and Script Generation</h3>
+                        <p>Saves the trained model as a `.pkl` file and generates training scripts with accuracy metrics.</p>
+                    </div>
+                     <div class="mlbot-feature-item reveal-on-scroll">
+                        <h3>Downloadable Files</h3>
+                        <p>Download models and associated files anytime from the Models tab.</p>
+                    </div>
+                    <div class="mlbot-feature-item reveal-on-scroll">
+                        <h3>Portability</h3>
+                        <p>Use generated training data and scripts in other environments, ready for API development.</p>
+                    </div>
+                </div>
+
+                <div class="mlbot-get-started reveal-on-scroll">
+                    <h3>Get Started with Zohencel-AI ML Bot</h3>
+                    <p>Install the latest version using pip:</p>
+                    <pre><code>pip install zohencel-ai</code></pre>
+                    <p>Run the code in a new Python file:</p>
+                    <pre><code>from zohencel_ai.mlbot.bot import ZohencelmlBot
+bot = ZohencelmlBot()
+bot.run()</code></pre>
+                    <div class="button-row">
+                        <a href="https://zohencelai.github.io/MLBot" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Try ML Bot Now</a>
+                        <button id="learn-more-mlbot-btn" class="btn btn-secondary">Learn More</button>
+                    </div>
+                     <div id="documentation-mlbot-container" class="documentation-container" style="display: none;">
+                        <div class="loading-indicator">Loading Documentation...</div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="voice-assistant" class="content-section content-section-light">
+            <div class="container content-grid">
+                <div class="content-image reveal-on-scroll">
+                    <img src="img/new_vai.jpg" alt="AI Voice Assistant Illustration">
+                </div>
+                <div class="content-text reveal-on-scroll">
+                    <h2 class="section-title">AI Voice Assistant</h2>
+                    <p>Experience Zohencel AI, a revolutionary, open-source AI voice assistant with inbuilt character roles and full customization. Tailor commands, personalities, and interactions effortlessly to suit your unique needs.</p>
+                    <p>With pre-designed characters and the ability to define custom roles, Zohencel AI adapts perfectly to both personal and professional requirements. Your voice assistant, your way!</p>
+                    <button id="learn-more-va-btn" class="btn btn-secondary">View Documentation</button>
+                     <div id="documentation-va-container" class="documentation-container" style="display: none;">
+                         <div class="loading-indicator">Loading Documentation...</div>
+                         </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chartbot" class="content-section">
+            <div class="container content-grid reverse-grid">
+                 <div class="content-image reveal-on-scroll">
+                    <img src="img/data.svg" alt="Chart Bot Data Visualization">
+                </div>
+                <div class="content-text reveal-on-scroll">
+                    <h2 class="section-title">Chart Bot</h2>
+                    <p>Chart Bot allows users to visualize data effortlessly through intuitive queries, generating insightful charts without coding expertise required.</p>
+                    <p class="example-query">Example: "can you plot gender wise survival rate?"</p>
+                    <button id="learn-more-cb-btn" class="btn btn-secondary">View Documentation</button>
+                     <div id="documentation-cb-container" class="documentation-container" style="display: none;">
+                         <div class="loading-indicator">Loading Documentation...</div>
+                         </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <ul class="stats-list">
+                    <li class="stat-item reveal-on-scroll">
+                        <div class="stat-box">
+                            <div class="stat-number"><span class="counter">16000</span>+</div>
+                            <div class="stat-label">Downloads</div>
                         </div>
                     </li>
-                    <li class="stat-item">
-                        <div class="text-center stat-box">
-                            <h1 class="blue counter" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: rgb(204, 0, 129);">3</h1>
-                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Features</h3>
+                    <li class="stat-item reveal-on-scroll">
+                         <div class="stat-box">
+                            <div class="stat-number counter">3</div>
+                             <div class="stat-label">Core Features</div>
                         </div>
                     </li>
-                    <li class="stat-item">
-                        <div class="text-center stat-box">
-                            <h1 class="pink" style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: rgb(137, 0, 206);">
-                                <span class="counter">3500</span> +
-                            </h1>
-                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem;">Feedbacks</h3>
+                    <li class="stat-item reveal-on-scroll">
+                         <div class="stat-box">
+                             <div class="stat-number"><span class="counter">3500</span>+</div>
+                             <div class="stat-label">Feedbacks</div>
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
-        <style>
-            /* Remove bullets and apply horizontal alignment */
-            .no-bullets {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                justify-content: center; /* Center align the items */
-                gap: 20px; /* Add spacing between items */
-            }
 
-            /* Individual list item styling */
-            .list--inline > .stat-item {
-                display: inline-block; /* Inline behavior */
-                text-align: center; /* Align content in the center */
-                min-width: 200px; /* Optional: adjust the size of each stat block */
-            }
+    </main>
 
-            /* Center alignment for mobile */
-            @media (max-width: 768px) {
-                .list--inline {
-                    flex-direction: column; /* Stack items vertically */
-                    gap: 15px; /* Reduce space for smaller screens */
-                }
-            }
-
-        </style>
-
-        <!-- Isolated Scripts -->
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/swiper.jquery.min.js"></script>
-        
-        <script>
-            (function() {
-                // Swiper initialization for isolated section
-                var swiper1 = new Swiper('#custom-stats-section .client-swiper', {
-                    slidesPerView: 3,
-                    paginationClickable: true,
-                    nextButton: '#custom-stats-section .swiper-button-next',
-                    prevButton: '#custom-stats-section .swiper-button-prev',
-                    spaceBetween: 60,
-                    breakpoints: {
-                        320: { slidesPerView: 1, spaceBetween: 10 },
-                        480: { slidesPerView: 1, spaceBetween: 20 },
-                        640: { slidesPerView: 1, spaceBetween: 30 }
-                    }
-                });
-
-                var swiper2 = new Swiper('#custom-stats-section .testimonial-swiper', {
-                    slidesPerView: 3,
-                    paginationClickable: true,
-                    spaceBetween: 30,
-                    grabCursor: true,
-                    freeMode: true,
-                    breakpoints: {
-                        320: { slidesPerView: 1, spaceBetween: 10 },
-                        480: { slidesPerView: 1, spaceBetween: 10 },
-                        640: { slidesPerView: 1, spaceBetween: 10 }
-                    }
-                });
-
-                // Counter initialization for isolated section
-                $('#custom-stats-section .counter').counterUp({ time: 1000 });
-            })();
-        </script>
-    </div>
-
-    <!-- Footer -->
-    <footer class="pt1 pb3 align--center-on-mobile" style="background-color: #d7d7d7;">
-        <div class="container">
-            <div class="grid-row">
-                <div class="grid-column mt2 span-full align--right align--center-on-mobile">
-                    <ul class="no-bullets list--inline">
-                        <li class="mr1">
-                            <a href="https://www.linkedin.com/in/vishnu-k-8a058425b/" class="link" target="_blank">
-                                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" height="24">
-                            </a>
-                        </li>
-                        <li class="mr1">
-                            <a href="mailto:vishnuknandanam@gmail.com" class="link">
-                                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30" height="24">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Vishnuk4906" class="link" target="_blank">
-                                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="30" height="24">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                 <p>&copy; <span id="current-year"></span> Zohencel AI. All Rights Reserved.</p>
+                 <p>Developed by Vishnu K.</p>
+            </div>
+            <div class="footer-social">
+                <ul class="no-bullets list--inline">
+                    <li><a href="https://www.linkedin.com/in/vishnu-k-8a058425b/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a></li>
+                    <li><a href="mailto:vishnuknandanam@gmail.com" class="social-link" aria-label="Email"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a></li>
+                    <li><a href="https://github.com/Vishnuk4906" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"></a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-    <!-- The compiled JavaScript file -->
-    <script src="js/production.js"></script>
-
-    </body>
+    <script src="js/jquery-2.1.1.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script> <script src="js/jquery.counterup.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script> <script src="script.js"></script> </body>
 </html>
-
